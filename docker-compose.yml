@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  server:
+    image: progeduslave:0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "${SLAVEPORT}:22"
+    tty: true        
